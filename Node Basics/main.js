@@ -1,5 +1,5 @@
 const greeting = require("./app.js")
-const {sum , user} = require('./sum.js');
+const {sum , user} = require('./sum.js');  // desructuring on the fly
 const multiply = require('./mul.js')
 
 greeting()

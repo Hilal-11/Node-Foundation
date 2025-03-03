@@ -5,4 +5,7 @@ function greeting () {
     console.log("Hello node and backend worldl...")
 }
 
-module.exports = greeting
+
+// module.exports = greeting 
+module.exports.message = message
+module.exports.greeting = greeting 

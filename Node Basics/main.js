@@ -19,4 +19,7 @@ const matrix = [
 matrices(matrix)
 matricesTranspose(matrix)
 console.log(data)
+  
+console.log("filename :- "+ __filename)
+console.log("dirname :- "+ __dirname)
 // console.log(module.exports)      //module.exports is an empty object

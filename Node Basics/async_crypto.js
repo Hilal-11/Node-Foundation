@@ -9,7 +9,11 @@ var a = 10004;
 var b = 18533;
 
 // password based key derivative function 2
-crypto.pbkdf2("password" , "salt" , 500000 , 64 , 'sha512', () => {
+// crypto.pbkdf2("password" , "salt" , 500000 , 64 , 'sha512', () => {
+//     console.log("password encrypted successfully...")
+// })
+
+crypto.pbkdf2("password" , "salt" , 500000 , 64 , 'sha512', (err , key) => {
     console.log("password encrypted successfully...")
 })
 

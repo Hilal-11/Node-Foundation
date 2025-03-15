@@ -1,5 +1,6 @@
 
 const express = require('express'); 
+
 const app = express();
 const bodyParser = require('body-parser')
 
@@ -17,7 +18,7 @@ app.post('/profile/user' , (req , res) => {
     const { username , password} = req.body;
     console.log(username);
     console.log(password);
-    res.send("User created successfully");
+    res.send( "User created successfully");
 })
 
 

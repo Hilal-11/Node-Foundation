@@ -11,13 +11,13 @@ app.get('/', (req , res) => {
 })
 
 app.post('/profile/user' , (req , res) => {
-    const { username , password} = req.body;
+    const { username , password} = req.body; 
     console.log(username);
     console.log(password);
     res.send( "User created successfully");
 })
 
-
+// connect express with mongoDB using mongoosh package
 mongoose.connect('mongodb://localhost:27017/myUsers' , {
     useNewUrlParser :true,
     useUnifiedTopology: true,

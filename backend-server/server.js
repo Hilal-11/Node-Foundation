@@ -1,7 +1,7 @@
 const express = require('express'); 
 const app = express();
 const bodyParser = require('body-parser');
-
+const mongoose = require('mongoose');
 
 // use to parse rwq.body data
 app.use(bodyParser.json())
@@ -15,6 +15,17 @@ app.post('/profile/user' , (req , res) => {
     console.log(username);
     console.log(password);
     res.send( "User created successfully");
+})
+
+
+mongoose.connect('mongodb://localhost:27017/myUsers' , {
+    useNewUrlParser :true,
+    useUnifiedTopology: true,
+
+}).then(() => {
+    console.log("Express to MongoDB connection seccessfully...")
+}).catch((error) => {
+    console.log(error+" conection failed some internal issue !!!");
 })
 
 app.listen(3000 , () => {

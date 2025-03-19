@@ -1,13 +1,13 @@
 const express = require('express')
 const router = express.Router();
 
-const {createTodo} = require("../controllers/createTodo")
-//const {getTodos} = require("../controllers/getTodos")
+const createTodo = require("../controllers/createTodo");
+const getTodos = require("../controllers/getTodos")
 
 // define app router
 
 router.post("/createTodo" , createTodo);
-//router.get("/getTodos" , getTodos)
+router.get("/getTodos" , getTodos)
 
 
 module.exports = router;

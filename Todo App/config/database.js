@@ -8,9 +8,9 @@ function connectDB() {
         useNewUrlParcer: true,
         useUnifiedTopology: true,
     }).then(() => {
-        console.log()
+        console.log("MongoDB Connected")
     }).catch((error) => {
-        console.log()
+        console.log("Connection error:", error)
     })
 }
 

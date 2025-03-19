@@ -19,7 +19,7 @@ const updateTodo = async (req , res) => {
         res.status(500).json({
             success: false,
             error: error.message,
-            message: "erver internal error" 
+            message: "server internal error" 
         })
     }
 }

@@ -4,7 +4,7 @@ const Todo = require("../models/todo")
 
 // define route handler
 
-exports.createTodo = async(req , res) => {
+const createTodo = async(req , res) => {
     try {
         const { title , description } = req.body;
         const response = await Todo.create({title , description})
@@ -28,3 +28,5 @@ exports.createTodo = async(req , res) => {
 
     }
 }
+
+module.exports = createTodo;

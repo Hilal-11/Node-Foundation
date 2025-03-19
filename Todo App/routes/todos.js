@@ -1,10 +1,10 @@
 const express = require('express')
-const router = express.Router;
+const router = express.Router();
 
 const {createTodo} = require("../controllers/createTodo")
 
 // define app router
 
-router.post('/createTodo' , createTodo);
+router.post("/createTodo" , createTodo);
 
 module.exports = router;

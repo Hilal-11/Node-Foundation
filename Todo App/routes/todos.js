@@ -8,7 +8,7 @@ const getSingleTodo = require("../controllers/getSingleTodo")
 
 router.post("/createTodo" , createTodo);
 router.get("/getTodos" , getTodos)
-router.get("getTodos/:id", getSingleTodo)
+router.get("/getTodos/:id", getSingleTodo)
 
 
 module.exports = router;

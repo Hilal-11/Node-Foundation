@@ -3,6 +3,7 @@ const Todo = require("../models/todo")
 
 const getSingleTodo = async (req , res) => {
     try{
+        const id = req.params.id;
         const response = await Todo.find({_id: id})
         res.status(200).json({
             success: true,

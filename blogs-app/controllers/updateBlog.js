@@ -3,7 +3,7 @@ const Blog = require('../models/Blog');
 
 const updateBlog = async (req , res) => {
     try{
-        const {id} = req.parame;
+        const {id} = req.params;
         const {title , aboutBlog} = req.body
         const update = await Blog.findByIdAndUpdate(
             {_id: id},

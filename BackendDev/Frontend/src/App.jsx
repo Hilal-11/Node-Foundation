@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-function App() {
 
+function App() {
 
   const [jokes , setJokes] = useState([])
   useEffect(() => {
     // http://localhost:3000/jokes
-    axios.get('http://localhost:3000/jokes')
+    axios.get('/api/jokes')
     .then((response) => {
       setJokes(response.data)
       console.log(response.data)
     }).catch((error) => {
-
       console.log(error.message)
       console.log("Data fetched failed ! sorry")
     })

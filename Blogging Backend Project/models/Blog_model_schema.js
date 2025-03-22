@@ -35,3 +35,5 @@ function BlogData () {
         }
     )
 }
+
+module.exports = mongoose.model("BlogSchema" , BlogData)

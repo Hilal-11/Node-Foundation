@@ -7,7 +7,8 @@ const like = async (req , res) => {
         const {like} = req.body;
 
         const response = await BlogSchema.findByIdAndUpdate(
-            { id , like , updateAt: Date.now()}
+            { _id: id },
+            { like , updateAt: Date.now()}
         )
         res.status(200).json({
             success: true,

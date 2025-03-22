@@ -4,7 +4,7 @@ const app = express();
 const PORT = process.env.PORT || 4000
 
 app.get("/" , (req , res) => {
-    res.send("<h1>Backend of Blogging website for practice and fun 🎯🎯🎯</h1>")
+    res.send("<h1 style='text-align: center; font-size: 8rem;'>Backend of Blogging website for practice and fun 🎯🎯🎯</h1>")
 })
 
 app.listen(PORT , () =>{

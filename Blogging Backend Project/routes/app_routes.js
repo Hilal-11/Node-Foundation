@@ -9,7 +9,7 @@ const like = require('../controllers/like')
 
 
 router.post('/createPost' , createPost)
-router.put('/likes/like' , like)
-router.get('/commits/commit' , commit)
+router.put('/like/:id' , like)
+router.put('/commit/:id' , commit)
 
 module.exports = router

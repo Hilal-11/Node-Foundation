@@ -3,14 +3,16 @@ const BlogSchema = require('../models/Blog_model_schema')
 
 const commit = async (req , res) => {
     try{
-        const {id} = req.parems;
-        const {commit} = req.body;
-        BlogSchema.findOneAndUpdate(
+        const {id} = req.params;
+        console.log(id)
+        const { commit } = req.body;
+        const postCommit = await BlogSchema.findByIdAndUpdate(
             { _id: id },
-            { commit , updateAt: Date.now()}
+            { commit , updatedAt: Date.now()}
         )
         res.status(200).json({
             success: true,
+            data: postCommit,
             message: "Successfully send a commit"
         })
     }catch(error) {

@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 
-function BlogData () {
-    mongoose.Schema(
+const BlogData = mongoose.Schema(
         {
             title: {
                 type: String,
@@ -15,11 +14,14 @@ function BlogData () {
             },
             commit: {
                 type: String,
-                maxLength: 200
+                maxLength: 200,
+                required: true,
+                default: "your commit here"
             },
             like: {
                 type: Boolean,
-                require: true
+                require: true,
+                default: false
             },
             createdAt:{
                 type: Date,
@@ -34,6 +36,5 @@ function BlogData () {
 
         }
     )
-}
 
 module.exports = mongoose.model("BlogSchema" , BlogData)

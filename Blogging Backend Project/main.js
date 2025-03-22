@@ -1,3 +1,4 @@
+
 const express = require("express");
 require("dotenv").config()
 const app = express();
@@ -12,10 +13,9 @@ app.get("/" , (req , res) => {
     res.send("<h1 style='text-align: center; font-size: 8rem;'>Backend of Blogging website for practice and fun 🎯🎯🎯</h1>")
 })
 
+app.use("/blogging", app_routes)
+
 app.listen(PORT , () =>{
     console.log(`App id runing on port ${PORT}`)
 })
-
-
-app.use("/blogging", app_routes)
-
+connectDB()  

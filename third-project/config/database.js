@@ -1,9 +1,10 @@
 
 
 const mongoose = require('mongoose')
-
+require('dotenv').config()
+const DATABASE_URL = process.env.DATABASE_URL
 const connectDB = () => {
-    mongoose.connect({
+    mongoose.connect(DATABASE_URL ,{
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
@@ -12,6 +13,7 @@ const connectDB = () => {
     }).catch((error) => {
         console.log(error.message)
         console.log("Failed to connect with database")
+        process.exit(1)
     })
 }
 

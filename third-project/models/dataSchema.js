@@ -7,28 +7,18 @@ const DataSchema = mongoose.Schema({
         require: true,
         maxLength: 50
     },
-    aboutPost: {
+    body: {
         type: String,
         require: true,
         maxLength: 500
     },
-    commits:{
+    commits:[{
         type: [],
-        require: true
-    },
-    likes:{
+        ref: 'Commit'
+    }],
+    likes:[{
         type: [],
-        require: true
-    },
-    createdAt:{
-        type: Date,
-        require: true,
-        default: Date.now()
-    },
-    updatedAt:{
-        type: Date,
-        require: true,
-        default: Date.now()
-    }
+        ref: 'Like'
+    }],
 })
 module.exports = DataSchema

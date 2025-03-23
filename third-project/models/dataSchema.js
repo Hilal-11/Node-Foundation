@@ -7,7 +7,7 @@ const DataSchema = mongoose.Schema({
         require: true,
         maxLength: 50
     },
-    postBody: {
+    aboutPost: {
         type: String,
         require: true,
         maxLength: 500
@@ -19,8 +19,16 @@ const DataSchema = mongoose.Schema({
     likes:{
         type: [],
         require: true
+    },
+    createdAt:{
+        type: Date,
+        require: true,
+        default: Date.now()
+    },
+    updatedAt:{
+        type: Date,
+        require: true,
+        default: Date.now()
     }
-
 })
-
 module.exports = DataSchema

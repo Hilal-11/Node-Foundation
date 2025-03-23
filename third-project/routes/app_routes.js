@@ -9,3 +9,10 @@ const like = require('../controllers/like')
 const dislike = require('../controllers/dislike')
 
 
+router.get('/getPosts' , getPosts);
+router.post('/createPost', createPost)
+router.put('/commit/:id', commit)
+router.put('/like/:id', like)
+router.put('/dislike/:id' , dislike)
+
+module.exports = router

@@ -3,9 +3,9 @@ const BlogSchema = require("../models/Blog_model_schema")
 
 const dislike = async (req , res) => {
     try{
-        const { id } = req.params;
+        const {id} = req.params;
         const { islike } = req.body;
-        const response = await BlogSchema(
+        const response = await BlogSchema.findByIdAndUpdate(
             {_id: id},
             { islike , updateAt: Date.now()}
         )
@@ -17,7 +17,7 @@ const dislike = async (req , res) => {
     }catch(error) {
         console.log(error.message)
         console.log("Failed to dislike the post")
-        res.status(500).json({
+        res.status(404).json({
             success: false,
             error: error.message,
             message: "Failed to dislike the post"

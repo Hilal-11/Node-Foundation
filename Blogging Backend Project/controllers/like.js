@@ -4,11 +4,11 @@ const BlogSchema = require('../models/Blog_model_schema')
 const like = async (req , res) => {
     try{
         const {id} = req.params;
-        const {like} = req.body;
+        const { islike } = req.body;
 
         const response = await BlogSchema.findByIdAndUpdate(
             { _id: id },
-            { like , updateAt: Date.now()}
+            { islike , updateAt: Date.now()}
         )
         res.status(200).json({
             success: true,

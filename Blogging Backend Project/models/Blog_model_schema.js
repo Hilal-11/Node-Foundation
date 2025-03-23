@@ -18,7 +18,7 @@ const BlogData = mongoose.Schema(
                 required: true,
                 default: "your commit here"
             },
-            like: {
+            islike: {
                 type: Boolean,
                 require: true,
                 default: false

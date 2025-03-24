@@ -3,7 +3,8 @@ const Post = require('../models/PostModel')
 
 const getPosts = async (req , res) => {
     try{    
-        const response = await Post.find({})
+        // const response = await Post.find({});
+        const response = await Post.find({}).populate('likes').populate('comments')
         
         res.status(200).json({
             success: true,

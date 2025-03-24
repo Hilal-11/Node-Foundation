@@ -1,11 +1,11 @@
 
-const Comments = require('../models/CommitModel')
+const Comment = require('../models/CommitModel')
 const Post = require('../models/PostModel')
 const comment = async (req , res) => {
     try{
         const { post , user , body } = req.body
         // create commiy
-        const comments = new Comments({
+        const comments = new Comment({
             post , user , body
         });
 

@@ -13,7 +13,7 @@ router.get('/dummyPage', dummyPage)
 // router.get('/getPosts' , getPosts);
 router.post('/createPost', createPost)
 router.post('/comments/comment', comments)
-router.put('likes/like', like)
+router.post('/likes/like', like)
 // router.put('/dislike/:id' , dislike)
 
 module.exports = router

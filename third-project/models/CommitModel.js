@@ -1,7 +1,7 @@
 
 const mongoose = require('mongoose')
 
-const commitSchema = new mongoose.Schema({
+const commentSchema = new mongoose.Schema({
     
     post: {
         type: mongoose.Schema.Types.ObjectId,
@@ -18,4 +18,4 @@ const commitSchema = new mongoose.Schema({
 
 })
 
-module.exports = mongoose.model("Commit" , commitSchema)
+module.exports = mongoose.model("Comments" , commentSchema)

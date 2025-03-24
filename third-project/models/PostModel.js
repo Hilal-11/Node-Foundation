@@ -12,9 +12,9 @@ const postSchema = new mongoose.Schema({
         require: true,
         maxLength: 500
     },
-    commits:[{
+    comments:[{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Commit'
+        ref: 'Comment'
     }],
     likes:[{
         type: mongoose.Schema.Types.ObjectId,

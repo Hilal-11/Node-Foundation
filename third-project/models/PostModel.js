@@ -1,7 +1,7 @@
 
 const mongoose = require('mongoose')
 
-const DataSchema = mongoose.Schema({
+const postSchema = new mongoose.Schema({
     title: {
         type: String,
         require: true,
@@ -13,12 +13,12 @@ const DataSchema = mongoose.Schema({
         maxLength: 500
     },
     commits:[{
-        type: [],
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'Commit'
     }],
     likes:[{
-        type: [],
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'Like'
     }],
 })
-module.exports = DataSchema
+module.exports = mongoose.model("Post" , postSchema)

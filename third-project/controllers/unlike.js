@@ -1,13 +1,21 @@
-const Like = require('../models/LikeModel')
+const Like = require('../models/LikeModel');
+const Post = require('../models/PostModel')
+
 
 const unlike = async (req , res) => {
     try{
-        const { post } = req.body;
-        const response = await Like.findByIdAndDelete(post)
+        const { post , like } = req.body;
+        const deleteLike = await Like.findOneAndDelete({post: post , _id: like})
+        // const deleteLike = await Like.findByIdAndDelete({_id: like})
 
-        res.ststua(200).json({
+        // update the post collection
+        const updatedPost = await Post.findByIdAndUpdate(post ,
+                                             {$pull: {likes: deleteLike._id}},
+                                             {new: true})
+
+        res.status(200).json({
             success: true,
-            data: response,
+            data: updatedPost,
             message: "dislike successful"
         })
     }catch(error) {
@@ -16,7 +24,7 @@ const unlike = async (req , res) => {
         res.status(500).json({
             success: false,
             error: error.message,
-            message: "Failed to dislike the post"
+            message: `Failed to dislike the post`
         })
     }
 }

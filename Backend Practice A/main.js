@@ -5,7 +5,7 @@ const app = express();
 require('dotenv').config();
 const PORT = process.env.PORT || 4000
 const connectDB = require('./config/database')
-const app_routers = require('./routes/app_routers')
+const app_routers = require('./routes/app_routers');
 
 app.use(express.json());
 
@@ -19,4 +19,6 @@ app.get("/", (req , res) => {
 app.listen(PORT , () => {
     console.log(`App is running on : ${PORT}`)
 })
+
+connectDB();
 

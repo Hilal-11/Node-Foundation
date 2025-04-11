@@ -6,10 +6,13 @@ const getPosts = require('../controllers/getPosts')
 const createPost = require('../controllers/createPost')
 const like = require('../controllers/like')
 const dislike = require('../controllers/dislike')
-const commit = require('../controllers/commit')
+const comment = require('../controllers/comment')
 
-router.get();
-router.post();
-router.put();
-router.put();
-router.delete();
+router.get("/getposts" , getPosts);
+router.post("/createPost" , createPost);
+router.put("/like" , like);
+router.put("/dislike" , dislike);
+router.delete("/comment" , comment);
+
+
+module.exports = router

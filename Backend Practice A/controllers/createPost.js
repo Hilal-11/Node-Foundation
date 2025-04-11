@@ -17,6 +17,15 @@ const createPost = async (req , res) => {
         })
 
     }catch(error){
+        console.log(error.message)
+        console.log("Failed to create a post in DB")
 
+        res.status(500).json({
+            success: false,
+            error: error.message,
+            message: "Failed to create a post in DB"
+        })
     }
 }
+
+module.exports = createPost

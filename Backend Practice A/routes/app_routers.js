@@ -10,9 +10,9 @@ const comment = require('../controllers/comment')
 
 router.get("/getposts" , getPosts);
 router.post("/createPost" , createPost);
-router.put("/like" , like);
-router.put("/dislike" , dislike);
-router.delete("/comment" , comment);
+router.put("/like/:id" , like);
+router.put("/dislike/:id" , dislike);
+router.put("/comment/:id" , comment);
 
 
 module.exports = router

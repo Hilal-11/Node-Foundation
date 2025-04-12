@@ -6,7 +6,7 @@ const likeModel = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "Like"
     },
-    user: {
+    user: { 
         type: String,
         required: true
     }

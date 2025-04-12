@@ -16,6 +16,6 @@ app.use('/api/v1', app_router)
 
 app.listen(PORT , () => {
     console.log(`App is running on PORT ${PORT}`)
-})
+})``
 
 connectDB();

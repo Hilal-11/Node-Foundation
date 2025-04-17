@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 function Home() {
+
   const userImage = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnC6su3Zpt1mX3oE8d8yssz66y42m_XV3ZevBCWQgMcpOeWfswSvoIYI-4d9zLczIevtU&usqp=CAU'
   const navigate = useNavigate();
   const [employee , setEmployee] = useState()
@@ -25,9 +26,6 @@ useEffect(() => {
   getAllData();
 }, [])
 
-  console.log(employee)
-
-
   return (
     <div>
         <div className='w-[80%] mx-auto py-6'>
@@ -35,7 +33,7 @@ useEffect(() => {
         <div className='flex justify-between'>
           <div className=''>
             <h1 className='font-bold text-4xl'>Employees</h1>
-            <p className='text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic, iusto.</p>
+            <p className='text-sm font-medium'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur ipsa unde magni deleniti labore nihil sapiente quisquam blanditiis porro quod mollitia tempore debitis explicabo iure quia aperiam, enim recusandae illo.</p>
           </div>
           <div>
             <button className='bg-blue-500 rounded-md px-10 py-4 font-bold cursor-pointer'
@@ -53,9 +51,6 @@ useEffect(() => {
           </div>
 
         {/*  Regestered Users */}
-
-        {/*  */}
-
          <div className='space-y-2'>
         {
           employee?.map((users , index) => (
@@ -69,11 +64,7 @@ useEffect(() => {
             </div>
           ))
         }
-
-
          </div>
-
-
         </div>
       </div>
     </div>

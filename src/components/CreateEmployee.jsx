@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Registration() {
+  const navigate = useNavigate('')
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    title: '',
-    department: '',
-    role: '',
-    phone: '',
+    employee_name: '',
+    employee_email: '',
+    employee_title: '',
+    employee_department: '',
+    employee_role: '',
+    employee_phone: '',
   });
 
   const handleChange = (e) => {
@@ -17,8 +19,31 @@ function Registration() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form Data Submitted:', formData);
-    // Add your form submission logic here
+    fetch('http://localhost:4000/api/v1/createEmployee' ,{ 
+      method: 'POST',
+      body: JSON.stringify(formData),
+      headers: { 'Content-Type' : 'application/json' }
+    }).then(res => 
+      res.json()
+    ).then((res)=> {
+      console.log(res)
+    }).catch(err => {
+      console.error("Error:", err);
+    });
+
+    setFormData({
+      employee_name: '',
+      employee_email: '',
+      employee_title: '',
+      employee_department: '',
+      employee_role: '',
+      employee_phone: '',
+    })
+
+    navigate('/')
+    window.location.reload();
+
+
   };
 
   return (
@@ -30,66 +55,66 @@ function Registration() {
             <label className="block text-sm font-medium text-gray-700">Employee Name:</label>
             <input
               type="text"
-              name="name"
-              value={formData.name}
+              name="employee_name"
+              value={formData.employee_name}
               onChange={handleChange}
               required
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full px-4 py-2 border text-black border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700">Employee Email:</label>
             <input
               type="email"
-              name="email"
-              value={formData.email}
+              name="employee_email"
+              value={formData.employee_email}
               onChange={handleChange}
               required
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full px-4 py-2 border text-black border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700">Title:</label>
             <input
               type="text"
-              name="title"
-              value={formData.title}
+              name="employee_title"
+              value={formData.employee_title}
               onChange={handleChange}
               required
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full px-4 py-2 border text-black border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700">Department:</label>
             <input
               type="text"
-              name="department"
-              value={formData.department}
+              name="employee_department"
+              value={formData.employee_department}
               onChange={handleChange}
               required
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full px-4 py-2 text-black border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700">Role:</label>
             <input
               type="text"
-              name="role"
-              value={formData.role}
+              name="employee_role"
+              value={formData.employee_role}
               onChange={handleChange}
               required
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full px-4 py-2 border text-black border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700">Phone:</label>
             <input
               type="tel"
-              name="phone"
-              value={formData.phone}
+              name="employee_phone"
+              value={formData.employee_phone}
               onChange={handleChange}
               required
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              className="mt-1 block w-full px-4 py-2 border text-black border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
             />
           </div>
           <button

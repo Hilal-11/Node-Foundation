@@ -1,8 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 function Home() {
-
+  const userImage = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnC6su3Zpt1mX3oE8d8yssz66y42m_XV3ZevBCWQgMcpOeWfswSvoIYI-4d9zLczIevtU&usqp=CAU'
   const navigate = useNavigate();
+  const [employee , setEmployee] = useState()
+  const getAllData = async () => {
+    try {
+      const getEmployee = await fetch(
+        `http://localhost:4000/api/v1/getAllEmployees`,
+        {
+          method: 'GET',
+          headers: {
+            "Content-type": "application/json"
+          },
+        }
+      )
+      const response = await getEmployee.json();
+      setEmployee(response.data)
+    }catch(error) {
+      console.log(error.message)
+    }
+  }
+useEffect(() => {
+  getAllData();
+}, [])
+
+  console.log(employee)
+
 
   return (
     <div>
@@ -14,7 +38,7 @@ function Home() {
             <p className='text-sm'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic, iusto.</p>
           </div>
           <div>
-            <button className='bg-blue-500 rounded-md px-10 py-4 font-bold'
+            <button className='bg-blue-500 rounded-md px-10 py-4 font-bold cursor-pointer'
               onClick={() => { navigate('/Regestration') }}
             >Add Employee</button>
           </div>
@@ -30,15 +54,21 @@ function Home() {
 
         {/*  Regestered Users */}
 
+        {/*  */}
+
          <div className='space-y-2'>
-          <div className='flex justify-between px-10 py-6 bg-slate-950'>
+        {
+          employee?.map((users , index) => (
+            <div key={index} className='flex justify-between px-10 py-6 bg-slate-950'>
               <div className='flex gap-3 font-bold text-md'>
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnC6su3Zpt1mX3oE8d8yssz66y42m_XV3ZevBCWQgMcpOeWfswSvoIYI-4d9zLczIevtU&usqp=CAU" alt="IM" className='text-center flex items-center w-[30px] h-[30px] rounded-full ring-1 bg-amber-400' />
-              Hilal Ahmad
+                <img src={userImage} alt="IM" className='text-center flex items-center w-[30px] h-[30px] rounded-full ring-1 bg-amber-400' />
+                {users.employee_name}
               </div>
-              <div className='font-bold text-md'>Computer Science </div>
-              <div className='font-bold text-md'>Software Development</div>
+              <div className='font-bold text-md'>{users.employee_department}</div>
+              <div className='font-bold text-md'>{users.employee_role}</div>
             </div>
+          ))
+        }
 
 
          </div>

@@ -33,7 +33,7 @@ useEffect(() => {
         <div className='flex justify-between'>
           <div className=''>
             <h1 className='font-bold text-4xl'>Employees</h1>
-            <p className='text-sm font-medium'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur ipsa unde magni deleniti labore nihil sapiente quisquam blanditiis porro quod mollitia tempore debitis explicabo iure quia aperiam, enim recusandae illo.</p>
+            <p className='text-sm font-medium'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur ipsa unde magni deleniti labore <br /> nihil sapiente quisquam blanditiis porro quod mollitia tempore debitis explicabo iure quia aperiam, enim recusandae illo.</p>
           </div>
           <div>
             <button className='bg-blue-500 rounded-md px-10 py-4 font-bold cursor-pointer'
@@ -42,7 +42,7 @@ useEffect(() => {
           </div>
         </div>
         {/* EMPLOYEES SECESSION */}
-        <div className='w-full h-[400px] bg-slate-900 shadow-sm shadow-gray-300 my-20 rounded-2xl'> 
+        <div className='w-full h-auto bg-slate-900 shadow-sm shadow-gray-300 my-20 rounded-2xl'> 
           {/* FIXED HEADER OF DATA */}
           <div className='flex justify-between  bg-slate-700 px-10 py-5 font-medium rounded-tl-2xl rounded-tr-2xl'>
             <div>Employee</div>

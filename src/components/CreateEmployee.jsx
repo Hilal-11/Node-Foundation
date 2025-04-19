@@ -9,7 +9,7 @@ function Registration() {
     employee_title: '',
     employee_department: '',
     employee_role: '',
-    employee_phone: '',
+    employee_phone: '', 
   });
 
   const handleChange = (e) => {

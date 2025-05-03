@@ -25,7 +25,7 @@ function Registration() {
       headers: { 'Content-Type' : 'application/json' }
     }).then(res => 
       res.json()
-    ).then((res)=> {
+    ).then((res)=> {  
       console.log(res)
     }).catch(err => {
       console.error("Error:", err);

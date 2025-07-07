@@ -30,19 +30,20 @@ useEffect(() => {
     <div>
         <div className='w-[80%] mx-auto py-6'>
         {/* HEADER */}
-        <div className='flex justify-between'>
+        <div className='flex justify-between flex-wrap gap-0'>
           <div className=''>
-            <h1 className='font-bold text-4xl'>Employees</h1>
-            <p className='text-sm font-medium'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur ipsa unde magni deleniti labore <br /> nihil sapiente quisquam blanditiis porro quod mollitia tempore debitis explicabo iure quia aperiam, enim recusandae illo.</p>
+            <h1 className='font-bold text-4xl text-center lg:text-left'>Employees</h1> <br />
+            <p className='text-md '>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur ipsa unde magni deleniti labore <br /> nihil sapiente quisquam blanditiis porro quod mollitia tempore debitis explicabo iure quia aperiam...</p>
           </div>
-          <div>
-            <button className='bg-blue-500 rounded-md px-10 py-4 font-bold cursor-pointer'
+          <div className='w-full lg:w-auto py-4'>
+            <button className='w-full bg-blue-500 rounded-md lg:px-10 py-3 font-bold cursor-pointer'
               onClick={() => { navigate('/Regestration') }}
             >Add Employee</button>
           </div>
         </div>
         {/* EMPLOYEES SECESSION */}
-        <div className='w-full h-auto bg-slate-900 shadow-sm shadow-gray-300 my-20 rounded-2xl'> 
+        {/* bg-slate-900 shadow-sm shadow-gray-300 */}
+        <div className='w-full h-auto  my-10 rounded-2xl'> 
           {/* FIXED HEADER OF DATA */}
           <div className='flex justify-between  bg-slate-700 px-10 py-5 font-medium rounded-tl-2xl rounded-tr-2xl'>
             <div>Employee</div>

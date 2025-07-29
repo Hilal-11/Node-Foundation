@@ -12,6 +12,7 @@ function Registration() {
     employee_phone: '', 
   });
 
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
